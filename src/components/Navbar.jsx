@@ -18,7 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Experience', 'Certificates', 'Soft Skills', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Process', 'Experience', 'Certificates', 'Soft Skills', 'Contact'];
 
   const hireMeMailto = `mailto:${personalInfo.emails.secondary}?subject=Hiring Inquiry – Portfolio&body=Hello Kavinda Selvan,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`;
 
@@ -28,7 +28,7 @@ const Navbar = () => {
         isOpen 
           ? 'bg-[#ff2a2a] py-4'
           : isScrolled 
-            ? 'bg-transparent py-4' 
+            ? 'bg-[#0a0a0a]/90 py-4 shadow-lg backdrop-blur-md' 
             : 'bg-transparent py-6'
       }`}
     >
