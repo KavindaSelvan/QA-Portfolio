@@ -18,7 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Experience', 'Certificates', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Experience', 'Certificates', 'Soft Skills', 'Contact'];
 
   const hireMeMailto = `mailto:${personalInfo.emails.secondary}?subject=Hiring Inquiry – Portfolio&body=Hello Kavinda Selvan,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`;
 
@@ -46,7 +46,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a 
               key={link} 
-              href={`#${link.toLowerCase()}`}
+              href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
               className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
             >
               {link}
@@ -93,7 +93,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a 
               key={link} 
-              href={`#${link.toLowerCase()}`}
+              href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
             >
