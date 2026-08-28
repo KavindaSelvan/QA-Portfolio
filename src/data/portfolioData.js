@@ -226,8 +226,8 @@ export const softSkillsList = [
   { name: "Communication", icon: "💬", desc: "Clear, concise, and structured interactions in both business and technical contexts." },
   { name: "Problem Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
   { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks like FastAPI, Spring Boot, or automation tools like n8n." },
-  { name: "Creativity", icon: "🎨", desc: "Blending cinematic aesthetics with software structure to build premium experiences." },
-  { name: "Time Management", icon: "⏰", desc: "Balancing B.Tech studies, event hosting, and developing robust software platforms." }
+  { name: "Prompt Engineering", icon: "🤖", desc: "Crafting clear, precise prompts to guide AI tools toward useful and reliable results." },
+  { name: "Critical Thinking", icon: "🧠", desc: "Analyzing problems from multiple perspectives and making thoughtful, evidence-based decisions." }
 ];
 
 export const projects = [
