@@ -1,52 +1,21 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import heroVideo from '../assets/hero video/kavinda-hero.mp4';
 import { heroContent, socialLinks } from '../data/portfolioData';
 
 const Hero = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
       easing: 'ease-out'
     });
-    // Video does NOT autoplay anymore
   }, []);
 
-  const toggleVideo = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
   return (
-    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-black">
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        loop
-        muted={isMuted}
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src={heroVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#ff2a2a]">
       {/* Left Floating Social Bar for Large Screens */}
-      <div className="hidden lg:flex flex-col gap-6 fixed left-6 top-1/2 -translate-y-1/2 z-50 mix-blend-difference">
+      <div className="hidden lg:flex flex-col gap-6 fixed left-6 top-1/2 -translate-y-1/2 z-40 mix-blend-difference">
         <a 
           href={socialLinks.github} 
           target="_blank" 
@@ -83,10 +52,10 @@ const Hero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-4 sm:px-6 pb-16 pt-24 md:py-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
+      <div className="absolute inset-0 z-20 px-4 sm:px-6 pb-16 pt-24 md:py-[8%] md:px-12 max-w-6xl mx-auto flex flex-col md:flex-row justify-start md:justify-between items-start md:items-end text-left w-full" style={{zIndex: 20}}>
         
         {/* Left Side: Text and Buttons */}
-        <div className="flex flex-col items-start text-left max-w-2xl w-full">
+        <div className="flex flex-col items-start text-left max-w-lg w-full">
           {/* Mobile / Hero inline socials */}
           <div 
             data-aos="fade-up"
@@ -107,16 +76,16 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 
             data-aos="fade-up"
-            className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+            className="text-white text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-2xl"
           >
-            {heroContent.greeting}, <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">{heroContent.titleHighlight}</span>
+            {heroContent.greeting}, <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">{heroContent.titleHighlight}</span>
           </h1>
 
           {/* Subheading */}
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-white text-base md:text-xl font-semibold mb-8 max-w-md drop-shadow-lg leading-relaxed"
           >
             {heroContent.subtitle}
           </p>
@@ -125,12 +94,12 @@ const Hero = () => {
           <div 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 w-full"
           >
             {/* Primary Button */}
             <a 
               href={heroContent.ctaPrimary.href}
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md text-center"
+              className="px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full bg-white text-black font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl text-center"
             >
               {heroContent.ctaPrimary.text}
             </a>
@@ -138,7 +107,7 @@ const Hero = () => {
             {/* Secondary Button - Glassmorphism style */}
             <a 
               href={heroContent.ctaSecondary.href}
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md text-center"
+              className="px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full bg-white/10 border-2 border-white text-white font-bold hover:bg-white/20 transition-all duration-300 backdrop-blur-md text-center hover:scale-110 shadow-lg"
             >
               {heroContent.ctaSecondary.text}
             </a>
@@ -147,9 +116,9 @@ const Hero = () => {
             <a
               href="/QA-CV.pdf"
               download="QA-CV.pdf"
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md inline-flex items-center justify-center gap-2 text-center"
+              className="px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full bg-white/10 border-2 border-white text-white font-bold hover:bg-white/20 transition-all duration-300 backdrop-blur-md inline-flex items-center justify-center gap-2 text-center hover:scale-110 shadow-lg"
             >
-              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14" />
               </svg>
               Download Resume
@@ -158,30 +127,25 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side: Play Video Button */}
+        {/* Right Side: Image Box */}
         <div 
           data-aos="zoom-in"
-          data-aos-delay="600"
-          className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
-          onClick={toggleVideo}
+          data-aos-delay="300"
+          className="hidden md:flex md:w-2/5 justify-center items-center"
         >
-          <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#ff2a2a] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(255,42,42,0.6)]">
-            {!isPlaying || isMuted ? (
-              // Play Icon
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            ) : (
-              // Pause Icon
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-              </svg>
-            )}
+          <div className="relative w-full max-w-2xl">
+            <div className="bg-black rounded-3xl p-4 shadow-2xl hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition-all duration-300">
+              <div className="bg-black/80 rounded-2xl p-4">
+                <img
+                  src="/portfolio_image.png"
+                  alt="Kavinda Selvan"
+                  className="w-full h-auto object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
-          <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-            {!isPlaying || isMuted ? "Play Reel" : "Pause"}
-          </span>
         </div>
+
       </div>
 
       {/* Scroll Indicator */}
@@ -203,6 +167,13 @@ const Hero = () => {
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </div>
+      </div>
+
+      {/* Wave Divider */}
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none z-30">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 md:h-24 fill-white">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z"></path>
+        </svg>
       </div>
     </section>
   );

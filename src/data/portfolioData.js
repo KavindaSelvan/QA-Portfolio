@@ -33,11 +33,12 @@ export const heroContent = {
       text: "Contact Me",
       href: "mailto:selvankavindaselvan@gmail.com?subject=Hiring Inquiry – Portfolio&body=Hello Kavinda Selvan,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
+  image2: "/portfolio_image.png",
 };
 
 export const aboutContent = {
   heading: "Hello!",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Kavinda Selvan</span>, a QA Engineer based in Nuwara-Eliya, Sri Lanka, passionate about ensuring software quality through thorough testing, automation, and attention to detail. I’m dedicated to delivering reliable, user-friendly, and high-quality applications.`,
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Kavinda Selvan</span>, a QA Engineer based in Nuwara-Eliya, Sri Lanka, passionate about ensuring software quality through thorough testing, automation, and attention to detail. Over the course of my career, I've tested 50+ websites, reviewed 25+ Figma designs, and QA'd 20+ mobile apps across various industries. I'm dedicated to delivering reliable, user-friendly, and high-quality applications.`,
   techStack: ["Java", "Spring Boot", "MERN Stack"],
 };
 

@@ -29,7 +29,7 @@ const Navbar = () => {
           ? 'bg-[#ff2a2a] py-4'
           : isScrolled 
             ? 'bg-[#0a0a0a]/90 py-4 shadow-lg backdrop-blur-md' 
-            : 'bg-transparent py-6'
+            : 'bg-[#1a1a1a] py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
