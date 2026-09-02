@@ -131,15 +131,15 @@ const Hero = () => {
         <div 
           data-aos="zoom-in"
           data-aos-delay="300"
-          className="hidden md:flex md:w-2/5 justify-center items-center"
+          className="hidden md:flex md:w-[42%] justify-center items-end"
         >
-          <div className="relative w-full max-w-2xl">
-            <div className="bg-black rounded-3xl p-4 shadow-2xl hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition-all duration-300">
-              <div className="bg-black/80 rounded-2xl p-4">
+          <div className="relative w-full max-w-[540px]">
+            <div className="bg-black rounded-[28px] p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-black/40 transition-all duration-300">
+              <div className="bg-black/80 rounded-[22px] overflow-hidden">
                 <img
                   src="/portfolio_image.png"
                   alt="Kavinda Selvan"
-                  className="w-full h-auto object-cover hover:scale-110 transition-transform duration-500"
+                  className="block w-full h-[520px] xl:h-[580px] object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
                 />
               </div>
             </div>
